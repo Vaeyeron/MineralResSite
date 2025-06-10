@@ -9,9 +9,17 @@
 <body>
     <div class="container mt-5">
         <h1 class="text-center mb-4">{{ mineral.name }}</h1>
+
+        <div class="mb-4" style="white-space: pre-line;">
+            <p>{{ mineral.description }}</p>
+        </div>
+
         <div class="d-flex justify-content-center gap-3">
             <a href="{% url 'datawrapper_redirect' mineral.id 'extraction' %}" class="btn btn-primary">Добыча</a>
-            <a href="{% url 'datawrapper_redirect' mineral.id 'reserves' %}" class="btn btn-success">Запасы</a>
+
+            {% if show_reserves %}
+                <a href="{% url 'datawrapper_redirect' mineral.id 'reserves' %}" class="btn btn-success">Запасы</a>
+            {% endif %}
         </div>
     </div>
 </body>

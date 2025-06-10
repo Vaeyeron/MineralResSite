@@ -7,38 +7,293 @@ django.setup()
 from minerals.models import Mineral
 
 minerals_data = [
-    {"name": "Нефть", "extraction_url": "https://datawrapper.dwcdn.net/7MpOL/3/",  "reserves_url": "https://datawrapper.dwcdn.net/sTFXf/1/"},
-    {"name": "Природный газ", "extraction_url": "https://datawrapper.dwcdn.net/Ruakl/1/",  "reserves_url": "https://datawrapper.dwcdn.net/GtVXT/2/"},
-    {"name": "Уголь", "extraction_url": "https://datawrapper.dwcdn.net/0ejBn/1/",  "reserves_url": "https://datawrapper.dwcdn.net/Qvp52/2/"},
-    {"name": "Железная руда", "extraction_url": "https://datawrapper.dwcdn.net/qwsUF/1/",  "reserves_url": "https://datawrapper.dwcdn.net/Lh5Y8/1/"},
-    {"name": "Уран", "extraction_url": "https://datawrapper.dwcdn.net/yAsaP/1/",  "reserves_url": "https://datawrapper.dwcdn.net/6kw4r/1/"},
-    {"name": "Марганцевые руды", "extraction_url": "https://datawrapper.dwcdn.net/SwKQK/1/",  "reserves_url": "https://datawrapper.dwcdn.net/FUv2Z/1/"},
-    {"name": "Хромовые руды", "extraction_url": "https://datawrapper.dwcdn.net/dVReA/1/",  "reserves_url": "https://datawrapper.dwcdn.net/8CgZ9/2/"},
-    {"name": "Бокситы", "extraction_url": "https://datawrapper.dwcdn.net/wxHvl/1/",  "reserves_url": "https://datawrapper.dwcdn.net/LcqL5/1/"},
-    {"name": "Нефелиновые руды", "extraction_url": "https://datawrapper.dwcdn.net/ye2Tu/1/",  "reserves_url": "https://datawrapper.dwcdn.net/oHytr/1/"},
-    {"name": "Медь", "extraction_url": "https://datawrapper.dwcdn.net/V7W7l/1/",  "reserves_url": "https://datawrapper.dwcdn.net/Gc465/1/"},
-    {"name": "Никель", "extraction_url": "https://datawrapper.dwcdn.net/9txGM/2/",  "reserves_url": "https://datawrapper.dwcdn.net/MTuyn/1/"},
-    {"name": "Кобальт", "extraction_url": "https://datawrapper.dwcdn.net/O7X8g/1/",  "reserves_url": "https://datawrapper.dwcdn.net/UhhkY/1/"},
-    {"name": "Свинец", "extraction_url": "https://datawrapper.dwcdn.net/Rl0In/1/",  "reserves_url": "https://datawrapper.dwcdn.net/dqwwk/1/"},
-    {"name": "Цинк", "extraction_url": "https://datawrapper.dwcdn.net/1ZEg4/1/",  "reserves_url": "https://datawrapper.dwcdn.net/gnace/1/"},
-    {"name": "Олово", "extraction_url": "https://datawrapper.dwcdn.net/V30UE/1/",  "reserves_url": "https://datawrapper.dwcdn.net/EkRJk/1/"},
-    {"name": "Вольфрам", "extraction_url": "https://datawrapper.dwcdn.net/VMBOP/1/",  "reserves_url": "https://datawrapper.dwcdn.net/g618s/1/"},
-    {"name": "Молибден", "extraction_url": "https://datawrapper.dwcdn.net/dYcPB/1/",  "reserves_url": "https://datawrapper.dwcdn.net/UxCyB/1/"},
-    {"name": "Титан", "extraction_url": "https://datawrapper.dwcdn.net/kL7Ge/1/",  "reserves_url": "https://datawrapper.dwcdn.net/zTbQb/1/"},
-    {"name": "Цирконий", "extraction_url": "https://datawrapper.dwcdn.net/gcC3P/1/",  "reserves_url": "https://datawrapper.dwcdn.net/ia1mb/1/"},
-    {"name": "Литий", "extraction_url": "https://datawrapper.dwcdn.net/auJP1/1/",  "reserves_url": "https://datawrapper.dwcdn.net/Pph19/1/"},
-    {"name": "Редкоземельные металлы", "extraction_url": "https://datawrapper.dwcdn.net/ChGW2/1/",  "reserves_url": "https://datawrapper.dwcdn.net/UYnKi/1/"},
-    {"name": "Скандий", "extraction_url": "https://datawrapper.dwcdn.net/eVvPU/1/",  "reserves_url": "https://datawrapper.dwcdn.net/eVvPU/1/"},
-    {"name": "Золото", "extraction_url": "https://datawrapper.dwcdn.net/HgIvs/1/",  "reserves_url": "https://datawrapper.dwcdn.net/HgIvs/1/"},
-    {"name": "Серебро", "extraction_url": "https://datawrapper.dwcdn.net/w6iKR/1/",  "reserves_url": "https://datawrapper.dwcdn.net/PNVH6/1/"},
-    {"name": "Платиноиды", "extraction_url": "https://datawrapper.dwcdn.net/5KRHv/1/",  "reserves_url": "https://datawrapper.dwcdn.net/saY8t/1/"},
-    {"name": "Алмазы", "extraction_url": "https://datawrapper.dwcdn.net/l9Hkx/1/",  "reserves_url": "https://datawrapper.dwcdn.net/lJr3M/1/"},
-    {"name": "Графит", "extraction_url": "https://datawrapper.dwcdn.net/2hTzR/1/",  "reserves_url": "https://datawrapper.dwcdn.net/ZZThZ/1/"},
-    {"name": "Апатитовые руды", "extraction_url": "https://datawrapper.dwcdn.net/5vkFD/1/",  "reserves_url": "https://datawrapper.dwcdn.net/Pjm4R/1/"},
-    {"name": "Фосфоритовые руды", "extraction_url": "https://datawrapper.dwcdn.net/QHXv0/1/",  "reserves_url": "https://datawrapper.dwcdn.net/dwjms/1/"},
-    {"name": "Калийные соли", "extraction_url": "https://datawrapper.dwcdn.net/0MU9j/1/",  "reserves_url": "https://datawrapper.dwcdn.net/jae2A/1/"},
-    {"name": "Плавиковый шпат", "extraction_url": "https://datawrapper.dwcdn.net/2WVlT/1/",  "reserves_url": "https://datawrapper.dwcdn.net/lSkmx/1/"},
-    {"name": "Цементное сырьё", "extraction_url": "https://datawrapper.dwcdn.net/PN0dq/1/"},
+    {
+        "name": "Нефть",
+        "description": "Нефть - жидкое горючее полезное ископаемое, образованное из остатков древних организмов (планктон, бактерии) в результате длительного воздействия высоких температур и давления.\n"
+                       "Свойства: Чёрная или тёмно-коричневая жидкость с характерным запахом, легче воды, обладает высокой теплотворной способностью.\n"
+                       "Применение: Используется для производства топлива (бензин, дизель, керосин), смазочных материалов, пластмасс, каучуков, красителей, лекарств и других химических продуктов.\n"
+                       "Добыча: Осуществляется бурением скважин на суше и шельфе морей.",
+        "extraction_url": "https://datawrapper.dwcdn.net/7MpOL/3/",
+        "reserves_url": "https://datawrapper.dwcdn.net/sTFXf/1/"
+    },
+    {
+        "name": "Природный газ",
+        "description": "Природный газ - горючий газообразный углеводород, образующийся в земной коре вместе с нефтью или самостоятельно."
+                       "Свойства: Бесцветный, без запаха (добавляют одоранты для обнаружения утечек), легче воздуха, высокая теплотворная способность."
+                       "Применение: Используется как топливо для отопления, промышленности, автомобилей; сырьё для производства удобрений, пластмасс, метанола."
+                       "Добыча: Добывается через скважины, часто вместе с нефтью.",
+        "extraction_url": "https://datawrapper.dwcdn.net/Ruakl/1/",
+        "reserves_url": "https://datawrapper.dwcdn.net/GtVXT/2/"
+    },
+    {
+        "name": "Уголь",
+        "description": "Уголь - твёрдое горючее полезное ископаемое, образованное из растительных остатков под воздействием высокого давления и температуры."
+                       "Свойства: Твёрдый, чёрный или бурый, горючий, содержит углерод, водород, серу."
+                       "Применение: Используется как топливо для электростанций, производства стали (кокс), химической промышленности."
+                       "Добыча: Открытый или подземный способ.",
+        "extraction_url": "https://datawrapper.dwcdn.net/0ejBn/1/",
+        "reserves_url": "https://datawrapper.dwcdn.net/Qvp52/2/"
+     },
+    {
+        "name": "Железная руда",
+        "description": "Железная руда - минеральное сырьё, содержащее железо в виде оксидов, карбонатов или сульфидов."
+                       "Свойства: Твёрдая порода, различного цвета (красная, чёрная, бурая)."
+                       "Применение: Основное сырьё для производства стали и чугуна."
+                       "Добыча: Открытый или подземный способ.",
+        "extraction_url": "https://datawrapper.dwcdn.net/qwsUF/1/",
+        "reserves_url": "https://datawrapper.dwcdn.net/Lh5Y8/1/"
+    },
+    {
+        "name": "Уран",
+        "description": "Уран - радиоактивный металл, содержащийся в урановых рудах."
+                       "Свойства: Серебристо-белый металл, радиоактивен, тяжёлый."
+                       "Применение: Используется как топливо для атомных электростанций и в военной промышленности (ядерное оружие)."
+                       "Добыча: Подземный способ.",
+        "extraction_url": "https://datawrapper.dwcdn.net/yAsaP/1/",
+        "reserves_url": "https://datawrapper.dwcdn.net/6kw4r/1/"
+    },
+    {
+        "name": "Марганцевые руды",
+        "description": "Марганцевые руды - минеральные соединения, содержащие марганец."
+                       "Свойства: Твёрдые, тёмно-серые или чёрные."
+                       "Применение: Для производства стали, сплавов, батарей."
+                       "Добыча: Открытый или подземный способ.",
+        "extraction_url": "https://datawrapper.dwcdn.net/SwKQK/1/",
+        "reserves_url": "https://datawrapper.dwcdn.net/FUv2Z/1/"
+    },
+    {
+        "name": "Хромовые руды",
+        "description": "Хромовые руды - минералы, содержащие хром."
+                       "Свойства: Твёрдые, тёмно-зелёные или чёрные."
+                       "Применение: Для производства нержавеющей стали, сплавов, химической промышленности."
+                       "Добыча: Открытый способ.",
+        "extraction_url": "https://datawrapper.dwcdn.net/dVReA/1/",
+        "reserves_url": "https://datawrapper.dwcdn.net/8CgZ9/2/"
+    },
+    {
+        "name": "Бокситы",
+        "description": "Бокситы - алюминиевые руды, содержащие оксид алюминия."
+                       "Свойства: Пористые, красные или белые."
+                       "Применение: Основное сырьё для производства алюминия."
+                       "Добыча: Открытый способ.",
+        "extraction_url": "https://datawrapper.dwcdn.net/wxHvl/1/",
+        "reserves_url": "https://datawrapper.dwcdn.net/LcqL5/1/"
+    },
+    {
+        "name": "Нефелиновые руды",
+        "description": "Нефелиновые руды - сложные минеральные образования, содержащие алюминий, кремний и другие элементы."
+                       "Свойства: Твёрдые, серые или зеленоватые."
+                       "Применение: Для производства алюминия, цемента, стекла."
+                       "Добыча: Открытый способ.",
+        "extraction_url": "https://datawrapper.dwcdn.net/ye2Tu/1/",
+        "reserves_url": "https://datawrapper.dwcdn.net/oHytr/1/"
+    },
+    {
+        "name": "Медь",
+        "description": "Медь - металл, добываемый из медных руд."
+                       "Свойства: Красноватый металл, пластичный, проводит тепло и электричество."
+                       "Применение: Для производства проводов, труб, сплавов, электроники."
+                       "Добыча: Открытый или подземный способ.",
+        "extraction_url": "https://datawrapper.dwcdn.net/V7W7l/1/",
+        "reserves_url": "https://datawrapper.dwcdn.net/Gc465/1/"
+    },
+    {
+        "name": "Никель",
+        "description": "Никель - металл, добываемый из никелевых руд."
+                       "Свойства: Серебристо-белый, устойчив к коррозии."
+                       "Применение: Для производства нержавеющей стали, аккумуляторов, сплавов."
+                       "Добыча: Открытый или подземный способ.",
+        "extraction_url": "https://datawrapper.dwcdn.net/9txGM/2/",
+        "reserves_url": "https://datawrapper.dwcdn.net/MTuyn/1/"
+    },
+    {
+        "name": "Кобальт",
+        "description": "Кобальт - металл, добываемый из кобальтовых руд."
+                       "Свойства: Серебристо-серый, магнитный, твёрдый."
+                       "Применение: Для производства сплавов, магнитов, батарей."
+                       "Добыча: Подземный способ.",
+        "extraction_url": "https://datawrapper.dwcdn.net/O7X8g/1/",
+        "reserves_url": "https://datawrapper.dwcdn.net/UhhkY/1/"
+    },
+    {
+        "name": "Свинец",
+        "description": "Свинец - металл, добываемый из свинцовых руд."
+                       "Свойства: Серый, мягкий, токсичный."
+                       "Применение: Для производства аккумуляторов, защитных экранов, сплавов."
+                       "Добыча: Открытый или подземный способ.",
+        "extraction_url": "https://datawrapper.dwcdn.net/Rl0In/1/",
+        "reserves_url": "https://datawrapper.dwcdn.net/dqwwk/1/"
+    },
+    {
+        "name": "Цинк",
+        "description": "Цинк - металл, добываемый из цинковых руд."
+                       "Свойства: Серебристо-белый, устойчив к коррозии."
+                       "Применение: Для производства оцинкованной стали, сплавов, батарей."
+                       "Добыча: Открытый или подземный способ.",
+        "extraction_url": "https://datawrapper.dwcdn.net/1ZEg4/1/",
+        "reserves_url": "https://datawrapper.dwcdn.net/gnace/1/"
+    },
+    {
+        "name": "Олово",
+        "description": "Олово - металл, добываемый из оловянных руд."
+                       "Свойства: Серебристо-белый, мягкий, устойчив к коррозии."
+                       "Применение: Для производства сплавов (бронза), покрытий, электроники."
+                       "Добыча: Открытый или подземный способ.",
+        "extraction_url": "https://datawrapper.dwcdn.net/V30UE/1/",
+        "reserves_url": "https://datawrapper.dwcdn.net/EkRJk/1/"
+    },
+    {
+        "name": "Вольфрам",
+        "description": "Вольфрам - металл, добываемый из вольфрамовых руд."
+                       "Свойства: Серый, твёрдый, тугоплавкий."
+                       "Применение: Для производства сплавов, инструментов, электроники."
+                       "Добыча: Подземный способ.",
+        "extraction_url": "https://datawrapper.dwcdn.net/VMBOP/1/",
+        "reserves_url": "https://datawrapper.dwcdn.net/g618s/1/"
+    },
+    {
+        "name": "Молибден",
+        "description": "Молибден - металл, добываемый из молибденовых руд (молибденит — основной минерал)."
+                       "Свойства: Серебристо-белый, тугоплавкий, устойчив к коррозии."
+                       "Применение: Для производства высокопрочных сталей и сплавов, используемых в аэрокосмической промышленности, химической промышленности и электронике."
+                       "Добыча: Открытый или подземный способ.",
+        "extraction_url": "https://datawrapper.dwcdn.net/dYcPB/1/",
+        "reserves_url": "https://datawrapper.dwcdn.net/UxCyB/1/"
+    },
+    {
+        "name": "Титан",
+        "description": "Титан - металл, добываемый из титановых руд (ильменит, рутил)."
+                       "Свойства: Лёгкий, прочный, устойчив к коррозии."
+                       "Применение: Для производства авиационных и космических конструкций, медицинских имплантатов, красителей (диоксид титана), химической промышленности."
+                       "Добыча: Открытый способ.",
+        "extraction_url": "https://datawrapper.dwcdn.net/kL7Ge/1/",
+        "reserves_url": "https://datawrapper.dwcdn.net/zTbQb/1/"
+    },
+    {
+        "name": "Цирконий",
+        "description": "Цирконий - металл, добываемый из циркониевых руд (циркон)."
+                       "Свойства: Серебристо-белый, устойчив к коррозии, низкое сечение захвата нейтронов."
+                       "Применение: Для производства ядерного топлива (оболочки твэлов), керамики, стекла, ювелирных изделий."
+                       "Добыча: Открытый способ.",
+        "extraction_url": "https://datawrapper.dwcdn.net/gcC3P/1/",
+        "reserves_url": "https://datawrapper.dwcdn.net/ia1mb/1/"
+    },
+    {
+        "name": "Литий",
+        "description": "Литий - щелочной металл, добываемый из литиевых руд (сподумен) или рассолов."
+                       "Свойства: Лёгкий, серебристо-белый, высокая реакционная способность."
+                       "Применение: Для производства аккумуляторов, стекла, керамики, смазочных материалов, фармацевтики."
+                       "Добыча: Открытый способ или добыча из рассолов.",
+        "extraction_url": "https://datawrapper.dwcdn.net/auJP1/1/",
+        "reserves_url": "https://datawrapper.dwcdn.net/Pph19/1/"
+    },
+    {
+        "name": "Редкоземельные металлы",
+        "description": "Редкоземельные металлы - группа из 17 элементов (например, лантан, неодим, празеодим), содержащихся в редкоземельных рудах."
+                       "Свойства: Различные свойства, но часто обладают магнитными, оптическими и химическими особенностями."
+                       "Применение: Для производства магнитов, аккумуляторов, электроники, осветительных приборов, катализаторов."
+                       "Добыча: Открытый или подземный способ.",
+        "extraction_url": "https://datawrapper.dwcdn.net/ChGW2/1/",
+        "reserves_url": "https://datawrapper.dwcdn.net/UYnKi/1/"
+    },
+    {
+        "name": "Скандий",
+        "description": "Скандий - редкий металл, добываемый из редкоземельных руд."
+                       "Свойства: Серебристо-белый, лёгкий, тугоплавкий."
+                       "Применение: Для производства сплавов, осветительных приборов, керамики."
+                       "Добыча: Подземный способ.",
+        "extraction_url": "https://datawrapper.dwcdn.net/eVvPU/1/",
+        "reserves_url": "https://datawrapper.dwcdn.net/eVvPU/1/"
+    },
+    {
+        "name": "Золото",
+        "description": "Золото - драгоценный металл, встречающийся в самородном виде или в рудах."
+                       "Свойства: Ярко-жёлтый, мягкий, устойчив к коррозии."
+                       "Применение: Для изготовления ювелирных изделий, электроники, инвестиций, зубных протезов."
+                       "Добыча: Открытый или подземный способ, а также гидрометаллургия.",
+        "extraction_url": "https://datawrapper.dwcdn.net/HgIvs/1/",
+        "reserves_url": "https://datawrapper.dwcdn.net/HgIvs/1/"
+    },
+    {
+        "name": "Серебро",
+        "description": "Серебро - драгоценный металл, встречающийся в самородном виде или в рудах."
+                       "Свойства: Блестящий, белый, мягкий, отличный проводник электричества."
+                       "Применение: Для производства ювелирных изделий, монет, фотоматериалов, электроники, антисептиков."
+                       "Добыча: Открытый или подземный способ.",
+        "extraction_url": "https://datawrapper.dwcdn.net/w6iKR/1/",
+        "reserves_url": "https://datawrapper.dwcdn.net/PNVH6/1/"
+    },
+    {
+        "name": "Платиноиды",
+        "description": "Платиноиды - группа благородных металлов (платина, палладий, родий, иридий, осмий, рутений)."
+                       "Свойства: Устойчивы к коррозии, тугоплавкие, редкие."
+                       "Применение: Для производства катализаторов, ювелирных изделий, электроники, медицинских устройств."
+                       "Добыча: Подземный способ.",
+        "extraction_url": "https://datawrapper.dwcdn.net/5KRHv/1/",
+        "reserves_url": "https://datawrapper.dwcdn.net/saY8t/1/"
+    },
+    {
+        "name": "Алмазы",
+        "description": "Алмазы - минерал, состоящий из углерода, образующийся в мантии Земли при высоком давлении."
+                       "Свойства: Самый твёрдый минерал, прозрачный или окрашенный, блестящий."
+                       "Применение: Для ювелирных изделий, режущих инструментов, абразивов."
+                       "Добыча: Открытый способ (карьеры) или подземный способ.",
+        "extraction_url": "https://datawrapper.dwcdn.net/l9Hkx/1/",
+        "reserves_url": "https://datawrapper.dwcdn.net/lJr3M/1/"
+    },
+    {
+        "name": "Графит",
+        "description": "Графит - минеральная форма углерода, мягкая и скользкая на ощупь."
+                       "Свойства: Чёрный, мягкий, проводит электричество."
+                       "Применение: Для производства карандашей, электродов, батарей, смазочных материалов, композитов."
+                       "Добыча: Открытый способ.",
+        "extraction_url": "https://datawrapper.dwcdn.net/2hTzR/1/",
+        "reserves_url": "https://datawrapper.dwcdn.net/ZZThZ/1/"
+    },
+    {
+        "name": "Апатитовые руды",
+        "description": "Апатитовые руды - минералы, содержащие фосфор (основной минерал — апатит)."
+                       "Свойства: Различные цвета (зелёный, голубой, коричневый), твёрдые."
+                       "Применение: Для производства удобрений, кислот, керамики."
+                       "Добыча: Открытый способ.",
+        "extraction_url": "https://datawrapper.dwcdn.net/5vkFD/1/",
+        "reserves_url": "https://datawrapper.dwcdn.net/Pjm4R/1/"
+    },
+    {
+        "name": "Фосфоритовые руды",
+        "description": "Фосфоритовые руды - минеральные образования, богатые фосфором."
+                       "Свойства: Твёрдые, серые или коричневые."
+                       "Применение: Для производства удобрений, кормовых добавок."
+                       "Добыча: Открытый способ.",
+        "extraction_url": "https://datawrapper.dwcdn.net/QHXv0/1/",
+        "reserves_url": "https://datawrapper.dwcdn.net/dwjms/1/"
+    },
+    {
+        "name": "Калийные соли",
+        "description": "Калийные соли - минералы, содержащие калий (например, сильвин, карналлит)."
+                       "Свойства: Белые или розовые кристаллы, растворимые в воде."
+                       "Применение: Для производства удобрений, химической промышленности."
+                       "Добыча: Шахтный способ или выщелачивание.",
+        "extraction_url": "https://datawrapper.dwcdn.net/0MU9j/1/",
+        "reserves_url": "https://datawrapper.dwcdn.net/jae2A/1/"
+    },
+    {
+        "name": "Плавиковый шпат",
+        "description": "Плавиковый шпат - минерал, содержащий фтор."
+                       "Свойства: Прозрачный или окрашенный (фиолетовый, зелёный), твёрдый."
+                       "Применение: Для производства фтористых соединений, стекла, керамики, металлургии."
+                       "Добыча: Открытый способ.",
+        "extraction_url": "https://datawrapper.dwcdn.net/2WVlT/1/",
+        "reserves_url": "https://datawrapper.dwcdn.net/lSkmx/1/"
+    },
+    {
+        "name": "Цементное сырьё",
+        "description": "Цементное сырьё - мергели, известняки, глины, используемые для производства цемента."
+                       "Свойства: Твёрдые породы, различного состава."
+                       "Применение: Для производства цемента, строительных материалов."
+                       "Добыча: Открытый способ.",
+        "extraction_url": "https://datawrapper.dwcdn.net/PN0dq/1/"
+    },
 ]
 
 for data in minerals_data:
